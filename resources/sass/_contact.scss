@@ -1,0 +1,120 @@
+.contact-section {
+
+    h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: $white;
+        text-align: center;
+      }
+
+    .info {
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 0 15px 25px rgba($black,.6);
+        margin: 100px auto;
+        padding: 0;
+        border-radius: 10px;
+    }
+
+    .info > * {
+        flex: 1 1 10em;
+    }
+
+    .contact-info {
+        padding: 40px;
+        position: relative;
+        background: rgba(51, 51, 51, 0.5);
+        border-radius: 10px 0 0 10px;
+
+        .contact-text {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 50%;
+            margin: auto 0;
+            top: 0; left: 10%; bottom: 0; right: 0;
+
+            .txt-box p {
+                font-size: 18px;
+            }
+
+            .txt-box > p ~ p { // Select all but the first p child of .txt-box
+                font-size: 14px;
+                color: $blue-light;
+            }   
+        }
+        
+    }
+
+    .contact-box {
+        padding: 40px;
+        background: rgba($black,.5);
+        border-radius: 0 10px 10px 0;
+
+        .msg-box {
+            position: relative;
+            
+            input,
+            textarea {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+            }
+
+            label,
+            .form-textarea:focus ~ .form-label {
+                position: absolute;
+                top:0;
+                left: 0;
+                padding: 10px 0;
+                font-size: 16px;
+                color: #fff;
+                pointer-events: none;
+                transition: .5s;
+            }
+
+            input:focus ~ label,
+            input:valid ~ label {
+                top: -20px;
+                left: 0;
+                color: $blue-light;
+                font-size: 12px;
+            }
+
+            .form-textarea:focus ~ .form-label, 
+            .form-textarea:valid ~ .textarea-label {
+                top: -20px;
+                left: 0;
+                color: #fff;
+                font-size: 16px;
+            }
+        }
+
+        form a {
+            position: relative;
+            display: inline-block;
+            @include buttonPadding;
+            color: $blue-light;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px;
+        }
+
+        a:hover {
+            background: $blue-light;
+            color: #fff;
+            border-radius: 5px;
+        }
+    }
+}

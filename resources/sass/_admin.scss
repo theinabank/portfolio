@@ -1,0 +1,124 @@
+.admin-section {
+    .admin-menu {
+        width: 10%;
+        background-color:  rgba($black, 0.2);
+
+        h2 {
+            margin: 30px 0;
+        }
+
+        a {
+            display: block;
+            color: $white;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        & > * {
+            padding-left: 20%;
+        }
+    }
+
+    .admin-content {
+        width: 90%;
+        .mini-info {
+            margin: 30px;
+
+            .button-add {
+                color: $blue-light;
+                @include buttonPadding;
+                transition: .5s;
+                border-bottom: 1px solid $blue-light;
+            }
+
+            a.button-add {
+                text-decoration: none;
+
+                &:hover {
+                    background-color: $blue-light;
+                    color: #fff;
+                }
+            }
+        }
+
+        .button-del {
+            background-color: $red;
+            color: $white;
+            padding: 5px 10px;
+            border: none;
+        }
+        
+        .styled-table {
+            border-collapse: collapse;
+            font-size: 0.9em;
+            width: 100%;
+            box-shadow: 0 0 20px rgba($black, 0.15);
+
+            th {
+                @include linearGradientBackground;
+                border-top: 1px solid $blue-dark;
+                text-align: left;
+            }
+
+            th,
+            td {
+                padding: 12px 10px;
+            }
+
+            .t-date {
+                min-width: 100px;
+            }
+
+            .t-title {
+                min-width: 150px;
+            }
+
+            tr {
+                &:nth-of-type(even) {
+                    background-color:rgba($black, 0.6);
+                }
+
+                &:nth-of-type(odd) {
+                    background-color: rgba($black, 0.4);
+                }
+
+                &:hover {
+                    @include linearGradientBackground;
+                    cursor: pointer;
+                }
+            }
+
+            .image {
+                width: 50px;
+
+                img {
+                    width: inherit;
+                    max-height: 50px;
+                    object-fit: cover;
+                }
+            }
+
+            .hidden {
+                color: rgb(228, 91, 91);
+            }
+
+            .public {
+                color: $green;
+            }
+
+            .button-edit {
+                color: $blue-light;
+                border-bottom: 1px solid $blue-light;
+            }
+
+            a.button-edit {
+                text-decoration: none;
+
+                &:hover {
+                    color: $blue-dark;
+                    border-bottom: 1px solid $blue-dark;
+                }
+            }
+        }
+    }
+}

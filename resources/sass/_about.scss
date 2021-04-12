@@ -1,0 +1,126 @@
+.about-section {
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        @include font-weight(semi bold);
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .image {
+        height: 40vh;
+        width: 100%;
+        @include backgroundImage('../images/autumn.jpg');
+    }
+    
+    .description {
+        display: flex;
+        flex-wrap: wrap;
+
+        h2 {
+            text-align: center;
+        }
+
+        & > div {
+            flex: 1 1 450px;
+            padding: 30px;
+
+            p {
+                font-size: 18px;
+                @include font-weight(medium);
+            }
+        }
+
+        .who-am-i {
+            background: rgba($black,.4);
+        }
+
+        .skills {
+            background: rgba($black,.5);
+
+            
+        }
+
+        .education {
+            background: rgba($black,.6);
+        }     
+        
+        .accordion {
+            background-color: #eee;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+
+            &:after {
+                content: '\002B';
+                color: rgb(59, 59, 59);
+                @include font-weight(bold);
+                float: right;
+                margin-left: 5px;
+              }
+            
+            &:hover, .activeAcc {
+                background-color: #ccc; 
+              }
+          }
+          
+          .activeAcc:after {
+            content: '\2212';
+          }
+          
+          .panel {
+            padding: 0 18px;
+            background-color: white;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.2s ease-out;
+            p {
+                color: $black;
+            }
+          }
+    }
+
+    .services {
+        background: rgba(0,0,0,.7);
+        padding: 30px 200px;
+
+        .heading {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+
+            .servicesBox {
+                padding: 40px 20px;
+                background: rgba(255, 255, 255, 0.1);
+                color: #fff;
+                max-width: 340px;
+                margin: 20px;
+                text-align: center;
+                transition: 0.5s;
+
+                &:hover {
+                    background: $blue-dark;
+                    cursor: pointer;
+                }
+
+                h2 {
+                    font-size: 20px;
+                    @include font-weight(semi bold);
+                }
+            }
+        }
+    }
+}

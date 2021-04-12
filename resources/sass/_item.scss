@@ -1,0 +1,79 @@
+.project-item-section {
+    .sub-nav {
+        margin-top: 100px;
+    }
+
+    .bg-gray {
+        background-color: rgba($black, 0.2);
+    }
+
+    .intro {
+        .image {
+            width: 60%;
+            height: 600px;
+            position: relative;
+
+            img {
+                max-height: 600px;
+                @include positionAbsolute;
+            }
+        }
+
+        .text {
+            width: 40%;
+            padding: 0 40px;
+
+            p {
+                line-height: 50px;
+                font-size: 20px;
+                word-spacing: 5px;
+            }
+        }
+    }
+
+    .description {
+
+        .gallery {
+            height: 500px;
+            overflow: scroll; 
+            overflow-x: scroll; 
+            overflow-y: hidden;
+            width: 100vw;
+            max-width: 100%;
+
+           img {
+            height: inherit;
+            margin-left: 6px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }          
+        }
+
+        .text {
+            p {
+                line-height: 40px;
+                font-size: 20px;
+                word-spacing: 5px;
+            }
+        }
+    }      
+
+    .modal {
+        .modal-body {
+            display: flex;
+            flex-wrap: wrap;
+
+            .modal-image {
+                width: calc(33% - 12px);
+                max-height: 500px;
+                margin: 6px;
+
+                img {
+                    max-height: 500px;
+                }
+            }
+        }
+    }
+}

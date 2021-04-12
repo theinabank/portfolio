@@ -1,0 +1,124 @@
+.gallery-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: auto;
+    max-width: 1200px;
+    max-height: 1200px;
+    
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 2vmin;
+    justify-items: center;
+    align-items: center;
+
+    img {
+        z-index: 1;
+        grid-column: span 2;
+        max-width: 100%;
+        margin-bottom: -52%;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        transform: scale(1);
+        transition: all .25s;
+        cursor: pointer;
+        
+        &:nth-child(7n + 1) {
+          grid-column: 2 / span 2;
+        }
+        
+        &:hover {
+          z-index: 2;
+          transform: scale(1.5);
+        }
+      }
+
+  }
+  
+.gallery-image {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+
+    .img-box {
+      margin: 3px;
+      height: 440px;
+      width: 440px;
+      overflow: hidden;
+      display: inline-block;
+      display: block;
+      color: white;
+      position: relative;
+      background-color: rgba($black,0.3);
+
+      img {
+        transform: scale(1.0);
+        transition: transform 0.4s ease;
+        overflow: hidden;
+        max-height: inherit;
+        width: inherit;
+        @include positionAbsolute;
+      }
+
+      .transparent-box {
+        height: 150px;
+        width: 100%;
+        background-color:rgba($black, 0);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: background-color 0.3s ease;
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 5px;
+        left: 20px;
+        opacity: 0.0;
+        text-shadow: 1px 5px 10px $black;
+        font-size: 1.6em;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        .opacity-low {
+          opacity: 0.5;
+        }
+
+        & > p:nth-child(2) {
+          font-size: 0.8em;
+        }
+    
+      }
+
+      &:hover img{
+        transform: scale(1.2);
+        transition-duration: .3s;
+        opacity: .7;
+      }
+
+      &:hover .transparent-box {
+        background-color: rgba($black,0.7);
+      }
+  
+      &:hover .caption {
+        transform: translateY(-20px);
+        opacity: 1.0;
+      }
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    @include tablet {
+      .img-box {
+        height: 300px;
+        width: 300px;
+      }
+    }
+}
+  
+  
+  
+  
+ 
