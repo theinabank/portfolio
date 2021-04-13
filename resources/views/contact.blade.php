@@ -16,7 +16,7 @@
                     <div class="contact-text">
                         <div class="txt-box">
                             <p>Email Me</p>
-                            <p>deina.banka@gmail.com</p>
+                            <p>myemail@gmail.com</p>
                         </div>
                         <div class="txt-box">
                             <p>Call Me</p>
